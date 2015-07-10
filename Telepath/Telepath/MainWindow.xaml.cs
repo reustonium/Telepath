@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Telepath
 {
@@ -20,9 +19,16 @@ namespace Telepath
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double screenWidth = SystemParameters.PrimaryScreenWidth;
+        private double screenHeight = SystemParameters.PrimaryScreenHeight;
+
         public MainWindow()
         {
             InitializeComponent();
+            this.Width = screenWidth;
+            this.Left = 0;
+            this.Top = screenHeight - this.Height;
         }
+
     }
 }
